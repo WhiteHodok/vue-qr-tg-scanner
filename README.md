@@ -1,0 +1,1 @@
+# vue-qr-tg-scanner
