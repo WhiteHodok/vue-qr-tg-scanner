@@ -33,6 +33,7 @@ const onCancel = () => {
 
 const onBackButtonPressed = () => {
   result.value = '1';
+  onSave()
   WebApp.closeScanQrPopup()
 };
 
