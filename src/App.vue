@@ -31,12 +31,18 @@ const onCancel = () => {
   WebApp.showScanQrPopup({})
 }
 
+const onBackButtonPressed = () => {
+  result.value = '1';
+  WebApp.closeScanQrPopup()
+};
+
 watch(result, async (newValue) => onSave())
 
 onMounted(() => {
   WebApp.expand()
   WebApp.onEvent("qrTextReceived", onDecode);
   WebApp.showScanQrPopup({})
+  WebApp.onEvent('backButtonClicked', onBackButtonPressed); // Обработка нажатия на кнопку "Назад"
 })
 
 onBeforeUnmount(() => {
